@@ -119,7 +119,7 @@ public class ParkinControllerTests {
 		
 		 ResponseEntity<RespuestaRest> respuesta= parkingController.addRegistro(registro);
 		 
-		 assertEquals( new ResponseEntity<>(respuestarest,HttpStatus.OK).getStatusCodeValue(), respuesta.getStatusCodeValue());
+		 assertEquals( new ResponseEntity<>(respuestarest,HttpStatus.CREATED).getStatusCodeValue(), respuesta.getStatusCodeValue());
 		
 		
 	}
@@ -207,7 +207,7 @@ public class ParkinControllerTests {
 	    respuestarest.setNumero(1);
 	    respuestarest.setMensaje("Mal");
 		
-		 when(salida.registrarsalida(registro)).thenReturn("Mal");
+		 when(salida.registrarsalida(registro)).thenReturn("Vehiculo No encontrado");
 		 
 		
 		 ResponseEntity<RespuestaRest> respuesta= parkingController.updateregistro(registro);
@@ -216,5 +216,26 @@ public class ParkinControllerTests {
 			
 		
 	}
+	
+	@Test
+	public void getAlltipoVehiculos() throws Throwable {
+		
+		List<TipoVehiculo> list = new ArrayList<TipoVehiculo>();
+		
+		
+		TipoVehiculo vehiculo= new TipoVehiculo(1, "moto", 20, 0, 500, 8000);
+		
+		list.add(vehiculo);		
+		
+		 when(consulta.allVehiculos()).thenReturn(list);
+		 
+		 
+		 ResponseEntity<List<TipoVehiculo>> respuesta= parkingController.getAlltipoVehiculos();
+		 
+		 assertEquals( new ResponseEntity<>(list, HttpStatus.OK), respuesta);
+		
+		
+	}
+
 
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.controller.ParkinControllerTests" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-10-04T18:38:14" hostname="DANNY-BOTELLO" time="0.249">
+  <properties/>
+  <testcase name="addRegistroCorrecto" classname="com.ceiba.controller.ParkinControllerTests" time="0.235"/>
+  <testcase name="addRegistroIncorrecto" classname="com.ceiba.controller.ParkinControllerTests" time="0.001"/>
+  <testcase name="updateregistroCorrecto" classname="com.ceiba.controller.ParkinControllerTests" time="0.002"/>
+  <testcase name="updateregistroIncorrecto" classname="com.ceiba.controller.ParkinControllerTests" time="0.001"/>
+  <testcase name="RegistroByPlaca" classname="com.ceiba.controller.ParkinControllerTests" time="0.006"/>
+  <testcase name="getAllregistros" classname="com.ceiba.controller.ParkinControllerTests" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

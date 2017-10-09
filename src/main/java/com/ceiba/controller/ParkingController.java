@@ -6,22 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.util.UriComponentsBuilder;
+
 
 import com.ceiba.entity.Registro;
+import com.ceiba.entity.TipoVehiculo;
 import com.ceiba.response.RespuestaRest;
 import com.ceiba.service.IConsulta;
 import com.ceiba.service.IIngreso;
 import com.ceiba.service.ISalida;
 @Controller
 @RequestMapping("user")
-
+@CrossOrigin(origins = {"http://localhost:4200"})
 public class ParkingController {
 	
 	
@@ -55,11 +57,20 @@ public class ParkingController {
 			return new ResponseEntity<>(list, HttpStatus.OK);
 		}
 		
+	    @GetMapping("tipovehiculos")
+		public ResponseEntity<List<TipoVehiculo>> getAlltipoVehiculos() {
+			List<TipoVehiculo> list = consulta.allVehiculos() ;
+			return new ResponseEntity<>(list, HttpStatus.OK);
+		}
 		
 		
 		@PostMapping("registro")
 		public ResponseEntity<RespuestaRest> addRegistro(@RequestBody Registro registro) {
-	                String flag = ingreso.registroEntrada(registro);
+	                
+			
+			
+			
+			String flag = ingreso.registroEntrada(registro);
 	                RespuestaRest respuesta=new RespuestaRest();
 	                if (flag!="Vehiculo ingresado correctamente") {
 	                	respuesta.setNumero(1);
@@ -68,7 +79,7 @@ public class ParkingController {
 	                }
 	                respuesta.setNumero(0);
 	    			respuesta.setMensaje(flag);
-	                return new ResponseEntity<>(respuesta,HttpStatus.OK);
+	                return new ResponseEntity<>(respuesta,HttpStatus.CREATED);
 		}
 		
 		@PutMapping("registro")
@@ -76,7 +87,7 @@ public class ParkingController {
 			String flag = salida.registrarsalida(registro);
 			RespuestaRest respuesta=new RespuestaRest();
 			
-			if(flag!="Salida registrada correctamente")
+			if(flag=="Vehiculo No encontrado")
 			{
 				respuesta.setNumero(1);
 				respuesta.setMensaje(flag);

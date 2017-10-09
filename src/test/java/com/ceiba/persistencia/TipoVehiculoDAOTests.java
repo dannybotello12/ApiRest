@@ -6,10 +6,9 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
+
 import java.util.ArrayList;
-import java.util.Date;
+
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -20,8 +19,7 @@ import javax.persistence.Query;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.ceiba.entity.Registro;
-import com.ceiba.entity.Restriccion;
+
 import com.ceiba.entity.TipoVehiculo;
 
 public class TipoVehiculoDAOTests {

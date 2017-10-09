@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.service.IngresoTests" tests="11" skipped="0" failures="0" errors="0" timestamp="2017-10-04T18:38:14" hostname="DANNY-BOTELLO" time="0.034">
+  <properties/>
+  <testcase name="espaciodisponible" classname="com.ceiba.service.IngresoTests" time="0.014"/>
+  <testcase name="letraplaca" classname="com.ceiba.service.IngresoTests" time="0.001"/>
+  <testcase name="accesovalido" classname="com.ceiba.service.IngresoTests" time="0.001"/>
+  <testcase name="registroEntrada" classname="com.ceiba.service.IngresoTests" time="0.003"/>
+  <testcase name="accesonovalido" classname="com.ceiba.service.IngresoTests" time="0.003"/>
+  <testcase name="diasdireccionplacacondias" classname="com.ceiba.service.IngresoTests" time="0.001"/>
+  <testcase name="registroEntradayaexiste" classname="com.ceiba.service.IngresoTests" time="0.002"/>
+  <testcase name="diasdireccionplacavacio" classname="com.ceiba.service.IngresoTests" time="0.001"/>
+  <testcase name="registroEntradarestriccionDia" classname="com.ceiba.service.IngresoTests" time="0.003"/>
+  <testcase name="diaSemana" classname="com.ceiba.service.IngresoTests" time="0.001"/>
+  <testcase name="registroEntradasinespacio" classname="com.ceiba.service.IngresoTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

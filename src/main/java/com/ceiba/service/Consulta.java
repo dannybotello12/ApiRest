@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ceiba.entity.Registro;
+import com.ceiba.entity.TipoVehiculo;
 import com.ceiba.persistencia.IRegistro;
+import com.ceiba.persistencia.ITipoVehiculo;
 import com.ceiba.persistencia.RegistroDAO;
+import com.ceiba.persistencia.TipoVehiculoDAO;
 
 
 @Service
@@ -19,6 +22,10 @@ public class Consulta implements IConsulta {
 	 this.registroDAO = registroDAO;
 	 }
 	
+	 private ITipoVehiculo tipovehiculoDAO;
+	 @Autowired public void setTipoVehiculoDAO(TipoVehiculoDAO tipoVehiculoDAO) {
+	 this.tipovehiculoDAO = tipoVehiculoDAO;
+	 }
 
 	
 	@Override
@@ -30,6 +37,14 @@ public class Consulta implements IConsulta {
 	@Override
 	public List<Registro> allRegistro() {
 		return  registroDAO.getAllRegistro();
+	}
+
+
+
+	@Override
+	public List<TipoVehiculo> allVehiculos() {
+	
+		return tipovehiculoDAO.getAllTipoVehiculo();
 	}
 	
 

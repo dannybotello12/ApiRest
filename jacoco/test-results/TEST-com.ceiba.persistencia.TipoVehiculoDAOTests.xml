@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.persistencia.TipoVehiculoDAOTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2017-10-04T18:38:14" hostname="DANNY-BOTELLO" time="0.011">
+  <properties/>
+  <testcase name="addTipoVehiculo" classname="com.ceiba.persistencia.TipoVehiculoDAOTests" time="0.002"/>
+  <testcase name="deleteTipoVehiculo" classname="com.ceiba.persistencia.TipoVehiculoDAOTests" time="0.002"/>
+  <testcase name="updateTipoVehiculo" classname="com.ceiba.persistencia.TipoVehiculoDAOTests" time="0.002"/>
+  <testcase name="getAllTipoVehiculo" classname="com.ceiba.persistencia.TipoVehiculoDAOTests" time="0.001"/>
+  <testcase name="getTipoVehiculoById" classname="com.ceiba.persistencia.TipoVehiculoDAOTests" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

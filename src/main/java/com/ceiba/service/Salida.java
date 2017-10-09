@@ -57,6 +57,11 @@ public class Salida implements ISalida {
 
 				if (horasdiferencia != -1) {
 					long horasbase = horasdiferencia;
+					if(horasdiferencia==0)
+					{
+						return tipovehiculo.getValorhora();
+					}
+					
 					while (horasbase > 0) {
 						if (horasbase >= 9) {
 							valor = valor + tipovehiculo.getValordia();
@@ -102,7 +107,7 @@ public class Salida implements ISalida {
 				registro.setValor(valor);
 				registroDAO.updateRegistro(registro);
 
-				return "Salida registrada correctamente";
+				return "Salida registrada correctamente "+valor ;
 			} else {
 				return "Vehiculo No encontrado";
 			}

@@ -2,11 +2,9 @@ package com.ceiba.service;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -85,6 +83,38 @@ public class SalidaTests {
 	    int valor=salida.valortotal(registro);
 	    
 	    assertEquals(valor, 12000);
+			
+	}
+	
+	
+	@Test
+	public void valortotalunahoratest() throws Throwable {
+	   
+		TipoVehiculo tipoVehiculo = new TipoVehiculo();
+		tipoVehiculo.setId(1);
+		tipoVehiculo.setDescripcion("Moto");
+		tipoVehiculo.setRecargo(2000);
+		tipoVehiculo.setStock(20);
+		tipoVehiculo.setValordia(6000);
+		tipoVehiculo.setValorhora(500);
+		// MOCK ALERT: return mocked result set on find
+		when(tipoVehiculoDAO.getTipoVehiculoById(1)).thenReturn(tipoVehiculo);
+	
+			DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+				Date	date = df.parse("28/09/2017 15:30:00");
+				Date	date2 = df.parse("28/09/2017 15:31:00");
+
+			Registro registro = new Registro();
+			registro.setPlaca("A");
+			registro.setRecargo(false);
+			registro.setTipoVehiculo(new TipoVehiculo(1, "", 20, 0, 500, 8000));
+			registro.setValor(0);
+			registro.setFechaIngreso(date);
+			registro.setFechaSalida(date2);
+		
+	    int valor=salida.valortotal(registro);
+	    
+	    assertEquals(valor, 500);
 			
 	}
 	
@@ -215,7 +245,7 @@ public class SalidaTests {
 		
 		String respuesta= salida.registrarsalida(registro);
 		
-	     assertEquals("Salida registrada correctamente", respuesta);
+	     assertEquals("Salida registrada correctamente 12500", respuesta);
 		
 	}
 	
